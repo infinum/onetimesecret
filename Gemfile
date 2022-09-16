@@ -3,11 +3,12 @@ source "https://rubygems.org/"
 # DEVMACHINE: bundle install
 # PRODUCTION: bundle install --frozen --deployment --without dev
 
-gem 'bundler', '2.3.17',
+# gem 'bundler', '2.3.17'
 gem 'addressable', '2.2.6'
 gem 'rack', '2.1.4.1'
 gem 'yajl-ruby', '1.4.2'
-gem 'thin', '1.8.1'
+# gem 'thin', '1.8.1'
+gem 'puma'
 
 gem 'mustache', '0.99.3'
 
@@ -17,7 +18,7 @@ gem 'familia', '0.7.1'
 gem 'storable', '0.8.9'
 
 gem 'encryptor', '1.1.3'
-gem 'bcrypt-ruby', '3.0.0'
+gem 'bcrypt-ruby', '~> 3.0'
 
 gem 'otto', '0.4.1'
 
