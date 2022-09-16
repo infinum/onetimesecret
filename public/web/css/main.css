@@ -1,10 +1,78 @@
+@font-face {
+  font-family: 'gt_haptik';
+  src: url('../fonts/gt-haptik-bold-webfont.eot');
+  src: url('../fonts/gt-haptik-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gt-haptik-bold-webfont.woff2') format('woff2'),
+       url('../fonts/gt-haptik-bold-webfont.woff') format('woff'),
+       url('../fonts/gt-haptik-bold-webfont.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'gt_haptik';
+  src: url('../fonts/gt-haptik-regular-webfont.eot');
+  src: url('../fonts/gt-haptik-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gt-haptik-regular-webfont.woff2') format('woff2'),
+       url('../fonts/gt-haptik-regular-webfont.woff') format('woff'),
+       url('../fonts/gt-haptik-regular-webfont.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gt_haptik_rotalic';
+  src: url('../fonts/gt-haptik-bold-rotalic.eot');
+  src: url('../fonts/gt-haptik-bold-rotalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gt-haptik-bold-rotalic.woff') format('woff'),
+       url('../fonts/gt-haptik-bold-rotalic.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'tiempos';
+  src: url('../fonts/TiemposTextWeb-Regular.eot');
+  src: url('../fonts/TiemposTextWeb-Regular.otf'),
+       url('../fonts/TiemposTextWeb-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TiemposTextWeb-Regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tiempos';
+  src: url('../fonts/TiemposTextWeb-RegularItalic.eot');
+  src: url('../fonts/TiemposTextWeb-RegularItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TiemposTextWeb-RegularItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'tiempos';
+  src: url('../fonts/TiemposTextWeb-Semibold.eot');
+  src: url('../fonts/TiemposTextWeb-Semibold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TiemposTextWeb-Semibold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tiempos';
+  src: url('../fonts/TiemposTextWeb-SemiboldItalic.eot');
+  src: url('../fonts/TiemposTextWeb-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TiemposTextWeb-SemiboldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
 
 
 /* ==========================================================================
    Custom styles
    ========================================================================== */
-
+body {
+  font-family: 'gt_haptik', Helvetica, Arial;
+}
 
 .masthead .nav a {
   color: black;
@@ -19,10 +87,14 @@
   font-weight: bolder;
 }
 
+#nav-header {
+  text-align: center;
+}
+
 #logo {
   padding: 0px;
-  margin-top: 10px;
-}
+  margin: 40px 0 20px;
+  display: inline-block;}
 
 #banner {
   width: 100%;
@@ -30,7 +102,7 @@
   margin: 0px;
   padding: 0px;
   margin-bottom: 0px;
-  border-bottom: 4px solid red; /* dd4a22, d22000, b04420 */
+  border-bottom: 4px solid #D8262C; /* dd4a22, d22000, b04420 */
 }
 
 #banner .broadcast {
@@ -48,28 +120,56 @@
 }
 
 #createSecret textarea, #createSecret input {
-  background-color: #f9f9f9;
+  background-color: transparent;
   padding: 6px;
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 .btn-custom {
   -webkit-font-smoothing: antialiased;
-  background-color: #dd4a22!important;
+  background-color: #D8262C !important;
   background-repeat: repeat-x;
   background-image: none;
-  color: #fff!important;
-  border-color: #b04420 #b04420 hsl(15,69%,41%);
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.00);
-  font-weight: bold;
-  font-size: 20px;
+  color: #FFFFFF !important;
+  border-radius: 0;
+  border: 0;
+  text-shadow: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
 }
 .btn-custom:hover {
-  background-color: #d22000 !important;
-  text-shadow: 1px 1px 0 #740500;
+  background-color: #BD0101 !important;
+  text-shadow: none;
 }
 
+.btn-hollow {
+  -webkit-font-smoothing: antialiased;
+  background-color: transparent !important;
+  background-repeat: repeat-x;
+  background-image: none;
+  color: #353535 !important;
+  border-radius: 0;
+  border: 1px solid rgba(0,0,0,0.2);
+  text-shadow: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
 
+.btn-hollow:hover {
+  background-color: #fafafa !important;
+  text-shadow: none;
+}
 
+.btn-hollow[disabled] {
+  opacity: 0.3;
+}
 
 #footer {
 
@@ -153,17 +253,66 @@ a.keepgoing {
 
 div.private{font-size: 18px; line-height: 18px; margin-top: 20px;}
 .shared{ margin-top: 20px;}
-#generate .secret input {width: 620px; font-size: 16px; line-height: 16px; padding: 6px; margin: 6px 0px 6px 0px;}
-.private .secret input, .private .secret textarea { background-color: #eee; color: #666; padding: 10px; width: 100%;}
-.private .secret input[disabled] { background-color: #eee; color: #fff;}
-.shared .secret input, .shared .secret textarea {
-  border: 8px solid #eee; font-size: 14px; line-height: 14px; background-color: #fafafa; color: #000; -padding: 10px; width: 100%; margin-top: 20px
+#generate .secret input {
+  width: 620px;
+  height: 38px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px;
+  margin: 6px 0px 6px 0px;
+  border: 0;
+  color: #666;
 }
-.uri input {width: 620px; font-size: 16px; line-height: 16px; padding: 6px; border: 0px; background-color: #ff0;}
+.private .secret input,
+.private .secret textarea {
+  background-color: #eee;
+  color: #666;
+  padding: 10px;
+  width: 100%;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.private .secret textarea[readonly] {
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.private .secret input[disabled] { background-color: #eee; color: #fff;}
+.shared .secret input,
+.shared .secret textarea {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000;
+  width: 100%;
+  margin-top: 20px;
+  background-color: transparent;
+  padding: 6px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.uri input {width: 620px; height: 38px; font-size: 16px; line-height: 16px; padding: 6px; border: 0px; background-color: #eee;}
 .uri input.private {background-color: #eee;}
 .uri p {padding: 6px; font-size: 80%; margin: 0px; color: #999;}
 .passphrase { margin-bottom: 30px; }
-.passphrase input {width: 320px; font-size: 16px; line-height: 16px; padding: 6px; border: 0px; background-color: #eee; color: #000;}
+.passphrase input {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px;
+  border: 0px;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+}
 
 .secret {margin-bottom: 20px}
 .uri{margin-bottom: 10px}
@@ -208,9 +357,10 @@ div.private{font-size: 18px; line-height: 18px; margin-top: 20px;}
 
 
 .err, .msg { font-weight: bold; padding: 8px; line-height: 32px; width: 100%; }
-.err { background-color: red; color: #fff }
+.err { background-color: #D8262C; color: #fff }
 .msg { background-color: #ff0; }
-.warning-text { color: red;}
+.warning-text { color: #D8262C;}
+
 
 .lightest {
   color: #ccc;
@@ -260,9 +410,9 @@ div.private{font-size: 18px; line-height: 18px; margin-top: 20px;}
   *padding-top: 19px;
   background-color: #fff;
   border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
+    -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
 }
 
 .options-box .title {
@@ -271,13 +421,13 @@ div.private{font-size: 18px; line-height: 18px; margin-top: 20px;}
   left: -1px;
   padding: 3px 7px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: normal;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   color: #9da0a4;
-  -webkit-border-radius: 4px 0 4px 0;
-     -moz-border-radius: 4px 0 4px 0;
-          border-radius: 4px 0 4px 0;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
 }
 
 .alert a {
