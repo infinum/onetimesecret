@@ -20,8 +20,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: audit
-        id: audit
+      - name: Ruby dependency security analysis
+        id: ruby-dep-audit
         run: |
           bundle exec bundle-audit update --quiet
           bundle exec bundle-audit check
