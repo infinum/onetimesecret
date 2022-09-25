@@ -83,14 +83,14 @@
       <li class="alt">
         {{^verification}}
         {{^is_subdomain}}
-        <a class="btn btn-large btn-block cufon" href="/" class="">{{i18n.page.reply_with_secret}}</a>
+        <a class="btn btn-large btn-block btn-custom cufon" href="/" class="">{{i18n.page.reply_with_secret}}</a>
         {{/is_subdomain}}
         {{#is_subdomain}}
         <a href="{{subdomain.homepage}}">Return to {{subdomain.company_domain}}</a>
         {{/is_subdomain}}
         {{/verification}}
         {{#verification}}
-        <a class="btn btn-large btn-block cufon" href="/login" class="">{{i18n.COMMON.login_to_your_account}}</a>
+        <a class="btn btn-large btn-block btn-custom cufon" href="/login" class="">{{i18n.COMMON.login_to_your_account}}</a>
         {{/verification}}
       </li>
     </ul>
