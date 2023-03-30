@@ -1,0 +1,33 @@
+name: Release
+run-name:  ${{ github.event_name == 'workflow_dispatch' && format('Releasing {0} on {1}', inputs.version, inputs.environment) || 'Automated release of latest build' }}
+
+on:
+  workflow_run:
+    workflows:
+      - Build and push
+    types:
+      - completed
+    branches:
+      - 'main'
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Which version to deploy?'
+        required: true
+        type: string
+      environment:
+        description: 'To which environment to deploy?'
+        required: true 
+        type: environment
+
+jobs:
+
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    name: 'Deploy'
+    uses: infinum/devops-pipelines/.github/workflows/deploy-ecs.yml@feature/docker
+    with:
+      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || 'production'}}
+      version: ${{ github.event_name == 'workflow_dispatch' && inputs.version || 'latest' }}
+    secrets: inherit

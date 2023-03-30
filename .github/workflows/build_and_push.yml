@@ -1,0 +1,32 @@
+name: Build and push
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      custom_tag:
+        description: 'Set custom tag for image'
+        required: true 
+        type: string
+
+jobs:
+  build-and-push:
+    if: ${{ github.event_name == 'push' }}
+    name: 'Run on push'
+    uses: infinum/devops-pipelines/.github/workflows/docker-build-push.yml@feature/docker
+    with:
+      cloud: 'AWS'
+      environment: 'production'
+    secrets: inherit
+
+  build-and-push-manual:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    name: 'Run on workflow dispatch'
+    uses: infinum/devops-pipelines/.github/workflows/docker-build-push.yml@feature/docker
+    with:
+      cloud: 'AWS'
+      environment: 'production'
+      custom_tag: ${{ inputs.custom_tag }}
+    secrets: inherit
